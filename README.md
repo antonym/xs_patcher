@@ -7,6 +7,7 @@ This script will retrieve and apply all of the latest hotfixes for Citrix XenSer
 	XenServer 6.0.0 (Boston)
 	XenServer 6.0.2 (Sanibel)
 	XenServer 6.1.0 (Tampa)
+	XenServer 6.2.0 (Clearwater)
 
 ## Running
 
