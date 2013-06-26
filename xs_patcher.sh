@@ -20,6 +20,10 @@ function get_xs_version {
                 DISTRO="tampa"
                 ;;
 
+                "XenServer release 6.2.0" )
+                DISTRO="clearwater"
+                ;;
+
                 * )
                 echo "Unable to detect version of XenServer, terminating"
                 exit 0
