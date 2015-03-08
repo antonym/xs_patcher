@@ -1,6 +1,11 @@
-## xs_patcher - patches XenServer host with all released hotfixes
+## xs_patcher
+
+Patches XenServer host with all released hotfixes
 
 This script will retrieve and apply all of the latest hotfixes for Citrix XenServer.
+A listing of the latest patches can be found here:
+
+http://xenserver.org/overview-xenserver-open-source-virtualization/download.html
 
 ## Supported Versions
 
@@ -8,6 +13,7 @@ This script will retrieve and apply all of the latest hotfixes for Citrix XenSer
 	XenServer 6.0.2 (Sanibel)
 	XenServer 6.1.0 (Tampa)
 	XenServer 6.2.0 (Clearwater)
+	XenServer 6.5.0 (Creedence)
 
 ## Running
 
