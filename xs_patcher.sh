@@ -2,6 +2,8 @@
 ## xs_patcher
 ## detects xenserver version and applies the appropriate patches
 
+## URL to patches: http://updates.xensource.com/XenServer/updates.xml
+
 HOSTID=`xe host-list --minimal`
 HOSTNAME=`hostname`
 
