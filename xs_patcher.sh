@@ -4,83 +4,70 @@
 
 ## URL to patches: http://updates.xensource.com/XenServer/updates.xml
 
-HOSTID=`xe host-list --minimal`
-HOSTNAME=`hostname`
+source /etc/xensource-inventory
+TMP_DIR=$HOME/tmp
+CACHE_DIR=$HOME/cache
 
 function get_xs_version {
-        get_version=`cat /etc/redhat-release | awk -F'-' {'print $1'}`
-        case "${get_version}" in
-                "XenServer release 6.0.0" )
-                DISTRO="boston"
-                ;;
-
-                "XenServer release 6.0.2" )
-                DISTRO="sanibel"
-                ;;
-
-                "XenServer release 6.1.0" )
-                DISTRO="tampa"
-                ;;
-
-                "XenServer release 6.2.0" )
-                DISTRO="clearwater"
-                ;;
-
-                "XenServer release 6.5.0" )
-                DISTRO="creedence"
-                ;;
-
-                * )
-                echo "Unable to detect version of XenServer, terminating"
-                exit 0
+	get_version=`cat /etc/redhat-release | awk -F'-' {'print $1'}`
+	case "${get_version}" in
+		"XenServer release 6.0.0" )
+		DISTRO="boston"
 		;;
 
-        esac
+		"XenServer release 6.0.2" )
+		DISTRO="sanibel"
+		;;
+
+		"XenServer release 6.1.0" )
+		DISTRO="tampa"
+		;;
+
+		"XenServer release 6.2.0" )
+		DISTRO="clearwater"
+		;;
+
+		"XenServer release 6.5.0" )
+		DISTRO="creedence"
+		;;
+
+		* )
+		echo "Unable to detect version of XenServer, terminating"
+		exit 0
+	;;
+
+	esac
 }
 
 function apply_patches {
-	if [ ! -d tmp ] 
-	then
-    		mkdir -p tmp
-	fi
+	[ -d $TMP_DIR ] || mkdir $TMP_DIR
+	[ -d $CACHE_DIR ] || mkdir $CACHE_DIR
 
-        echo "Looking for missing patches on $HOSTNAME for $DISTRO..."
+	echo "Looking for missing patches for $DISTRO..."
 
-        for PATCH in `cat patches/$DISTRO`      
-        do
-	        PATCH_NAME=`echo $PATCH | awk -F'|' {'print $1'}`
-        	PATCH_UUID=`echo $PATCH | awk -F'|' {'print $2'}`
-                PATCH_URL=`echo $PATCH | awk -F'|' {'print $3'}`
-		PATCH_KB=`echo $PATCH | awk -F'|' {'print $4'}`
+	grep -v '^#' patches/$DISTRO | while IFS='|'; read PATCH_NAME PATCH_UUID PATCH_URL PATCH_KB; do
+		PATCH_FILE=$(echo $PATCH_URL | awk -F/ '{print $NF}')
 
-                if [ -f /var/patch/applied/$PATCH_UUID ]
-		then
+		if [ -f /var/patch/applied/$PATCH_UUID ]; then
 			echo "$PATCH_NAME has been applied, moving on..."
-		fi
-	       
-		if [ ! -f /var/patch/applied/$PATCH_UUID ]
-        	then
+		else
 			echo "Found missing patch $PATCH_NAME, checking to see if it exists in cache..."
 
-			if [ ! -f cache/$PATCH_NAME.xsupdate ] 
-			then
+			if [ ! -f $CACHE_DIR/$PATCH_NAME.xsupdate ]; then
 				echo "Downloading from $PATCH_URL..."
-				cd tmp
-				wget -q $PATCH_URL
-				unzip -qq $PATCH_NAME.zip				
-				mv $PATCH_NAME.xsupdate ../cache
-				cd ..
+				wget -q $PATCH_URL -O $TMP_DIR/$PATCH_FILE
+				echo "...unpaching"
+				unzip -qq $TMP_DIR/$PATCH_FILE -d $CACHE_DIR
 			fi	
 
 			echo "Applying $PATCH_NAME... [ Release Notes @ $PATCH_KB ]"
-             		xe patch-upload file-name=cache/$PATCH_NAME.xsupdate
-		        xe patch-apply uuid=$PATCH_UUID host-uuid=$HOSTID
-	        fi
+			xe patch-upload file-name=$CACHE_DIR/$PATCH_NAME.xsupdate
+			xe patch-apply uuid=$PATCH_UUID host-uuid=$INSTALLATION_UUID
+		fi
+	done
 
-        done
-
-	rm -rf tmp
-        echo "Everything has been patched up!"
+	#rm -rf tmp/*
+	echo "Everything has been patched up!"
 }
 
 get_xs_version
