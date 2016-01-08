@@ -5,8 +5,8 @@
 ## URL to patches: http://updates.xensource.com/XenServer/updates.xml
 
 source /etc/xensource-inventory
-TMP_DIR=$HOME/tmp
-CACHE_DIR=$HOME/cache
+TMP_DIR=tmp
+CACHE_DIR=cache
 
 function get_xs_version {
 	get_version=`cat /etc/redhat-release | awk -F'-' {'print $1'}`
@@ -56,17 +56,18 @@ function apply_patches {
 			if [ ! -f $CACHE_DIR/$PATCH_NAME.xsupdate ]; then
 				echo "Downloading from $PATCH_URL..."
 				wget -q $PATCH_URL -O $TMP_DIR/$PATCH_FILE
-				echo "...unpaching"
+				echo "Unpacking..."
 				unzip -qq $TMP_DIR/$PATCH_FILE -d $CACHE_DIR
 			fi	
 
 			echo "Applying $PATCH_NAME... [ Release Notes @ $PATCH_KB ]"
 			xe patch-upload file-name=$CACHE_DIR/$PATCH_NAME.xsupdate
 			xe patch-apply uuid=$PATCH_UUID host-uuid=$INSTALLATION_UUID
+			xe patch-clean uuid=$PATCH_UUID
 		fi
 	done
 
-	#rm -rf tmp/*
+	rm -rf tmp/*
 	echo "Everything has been patched up!"
 }
 
