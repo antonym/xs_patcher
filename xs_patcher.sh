@@ -66,7 +66,7 @@ function apply_patches {
 		fi
 	done
 
-	#rm -rf tmp/*
+	rm -rf $TMP_DIR/*
 	echo "Everything has been patched up!"
 }
 
