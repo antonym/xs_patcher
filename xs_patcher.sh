@@ -57,7 +57,7 @@ function apply_patches {
 				echo "Downloading from $PATCH_URL..."
 				wget -q $PATCH_URL -O $TMP_DIR/$PATCH_FILE
 				echo "...unpaching"
-				unzip -qq $TMP_DIR/$PATCH_FILE -d $CACHE_DIR
+				unzip -qq $TMP_DIR/$PATCH_FILE -d $CACHE_DIR && rm $TMP_DIR/$PATCH_FILE
 			fi	
 
 			echo "Applying $PATCH_NAME... [ Release Notes @ $PATCH_KB ]"
