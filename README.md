@@ -14,6 +14,7 @@ http://xenserver.org/overview-xenserver-open-source-virtualization/download.html
 	XenServer 6.1.0 (Tampa)
 	XenServer 6.2.0 (Clearwater)
 	XenServer 6.5.0 (Creedence)
+	XenServer 7.0.0 (Dundee)
 
 ## Running
 

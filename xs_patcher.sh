@@ -31,6 +31,10 @@ function get_xs_version {
 		DISTRO="creedence"
 		;;
 
+		"XenServer release 7.0.0" )
+		DISTRO="dundee"
+		;;
+
 		* )
 		echo "Unable to detect version of XenServer, terminating"
 		exit 0
