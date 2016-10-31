@@ -1,15 +1,8 @@
-XS62ESP1|0850b186-4d47-11e3-a720-001b2151a503|downloadns.citrix.com.edgesuite.net/akdlm/8707/XS62ESP1.zip|support.citrix.com/article/CTX139788
-XS62ESP1002|297f2f77-5603-4aaf-9e56-db49512d4592|downloadns.citrix.com.edgesuite.net/akdlm/8737/XS62ESP1002.zip|support.citrix.com/article/CTX140051
-XS62ESP1003|c208dc56-36c2-4e91-b8d7-0246575b1828|downloadns.citrix.com.edgesuite.net/akdlm/9031/XS62ESP1003.zip|support.citrix.com/article/CTX140416
-XS62ESP1004|996dd2e7-ad95-49cc-a0be-2c9adc4dfb0b|downloadns.citrix.com.edgesuite.net/akdlm/9032/XS62ESP1004.zip|support.citrix.com/article/CTX140417
-XS62ESP1005|1c952800-c030-481c-a0c1-d1b45aa19fcc|downloadns.citrix.com.edgesuite.net/akdlm/9058/XS62ESP1005.zip|support.citrix.com/article/CTX140553
-XS62ESP1008|59a75271-12f9-4e6a-8ba2-325c2f5b0b47|downloadns.citrix.com.edgesuite.net/akdlm/9491/XS62ESP1008.zip|support.citrix.com/article/CTX141036
-XS62ESP1009|a24d94e1-326b-4eaa-8611-548a1b5f8bd5|downloadns.citrix.com.edgesuite.net/akdlm/9617/XS62ESP1009.zip|support.citrix.com/article/CTX141191
-XS62ESP1011|7d670435-547c-419a-ab7e-296705a752b8|downloadns.citrix.com.edgesuite.net/akdlm/9698/XS62ESP1011.zip|support.citrix.com/article/CTX141472
-XS62ESP1013|b22d6335-823d-43a6-ba26-28793717125b|downloadns.citrix.com.edgesuite.net/akdlm/9703/XS62ESP1013.zip|support.citrix.com/article/CTX141480
-XS62ESP1014|4fc82e62-b938-407d-a2c6-68c8922f3ec2|downloadns.citrix.com.edgesuite.net/akdlm/9708/XS62ESP1014.zip|support.citrix.com/article/CTX141486
-XS62ESP1015|f4f66d0a-d408-446e-a014-8e793baccb07|downloadns.citrix.com.edgesuite.net/akdlm/10128/XS62ESP1015.zip|support.citrix.com/article/CTX141717
-XS62ESP1016|55444a02-4d97-4d6d-b076-ddbe8697244b|downloadns.citrix.com.edgesuite.net/akdlm/10174/XS62ESP1016.zip|support.citrix.com/article/CTX141779
-XS62ESP1017|902607f2-6186-464b-bcb8-86559602ab58|downloadns.citrix.com.edgesuite.net/akdlm/10193/XS62ESP1017.zip|support.citrix.com/article/CTX142012
-XS62ESP1025|f359f49e-0c5a-4e38-8da0-9f550dab5f64|downloadns.citrix.com.edgesuite.net/akdlm/10564/XS62ESP1025.zip|support.citrix.com/article/CTX201078
-
+XS62ESP1|0850b186-4d47-11e3-a720-001b2151a503|downloadns.citrix.com.edgesuite.net/8707/XS62ESP1.zip|support.citrix.com/article/CTX139788
+XS62ESP1014|4fc82e62-b938-407d-a2c6-68c8922f3ec2|http://downloadns.citrix.com.edgesuite.net/9708/XS62ESP1014.zip|support.citrix.com/article/CTX141486
+XS62ESP1017|902607f2-6186-464b-bcb8-86559602ab58|downloadns.citrix.com.edgesuite.net/10193/XS62ESP1017.zip|support.citrix.com/article/CTX142012
+# THE FOLLOWING SHOULDNT BE NECESSARY AS IT SUPOSEDLY SUPERSEDED BY SP1047
+#XS62ESP1036|4e6f7167-d871-41c7-ba43-fe2fd0d18773|https://support.citrix.com/supportkc/filedownload?uri=/filedownload/CTX206525/XS62ESP1036.zip|https://support.citrix.com/article/CTX206525
+XS62ESP1038|a265bc4d-e3a7-4a67-bc6e-8806611ac78d|https://support.citrix.com/supportkc/filedownload?uri=/filedownload/CTX204052/XS62ESP1038.zip|support.citrix.com/article/CTX204052
+XS62ESP1047|ed801a7c-1972-4f10-b4c1-01cca0b23ade|support.citrix.com/supportkc/filedownload?uri=/filedownload/CTX216555/XS62ESP1047.zip|support.citrix.com/article/CTX216555
+XS62ESP1050|fdc7ede4-2533-4a7b-9c2e-0fd5835f844f|support.citrix.com/supportkc/filedownload?uri=/filedownload/CTX217642/XS62ESP1050.zip|support.citrix.com/article/CTX217642
