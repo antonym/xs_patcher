@@ -7,14 +7,27 @@ A listing of the latest patches can be found here:
 
 http://xenserver.org/overview-xenserver-open-source-virtualization/download.html
 
-## Supported Versions
+links to recomended patches per version:
+XS 7.0: https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&prod=XenServer&pver=XenServer+7.0&ct=Hotfixes&ctcf=Recommended
+XS 6.5: https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&prod=XenServer&pver=XenServer+6.5&ct=Hotfixes&ctcf=Recommended
+XS 6.2: https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&prod=XenServer&pver=XenServer+6.2.0&ct=Hotfixes&ctcf=Recommended
+XS 6.1: https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&prod=XenServer&pver=XenServer+6.1.0&ct=Hotfixes&ctcf=Recommended **
+XS 6.0.2: https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&prod=XenServer&pver=XenServer+6.0.2&ct=Hotfixes&ctcf=Recommended
 
-	XenServer 6.0.0 (Boston)
-	XenServer 6.0.2 (Sanibel)
-	XenServer 6.1.0 (Tampa)
-	XenServer 6.2.0 (Clearwater)
-	XenServer 6.5.0 (Creedence)
-	XenServer 7.0.0 (Dundee)
+** Xenserver 6.1 is EOL past September 2016. Use at your Own risk.
+
+## Supported Versions / Last update
+
+	XenServer 6.0.0 (Boston)        ??
+	XenServer 6.0.2 (Sanibel)       ??
+	XenServer 6.1.0 (Tampa)         2017/02
+	XenServer 6.2.0 (Clearwater)    ??
+	XenServer 6.5.0 (Creedence)     2017/02
+	XenServer 7.0.0 (Dundee)        2017/02
+
+At this time (February 2017) the XenServer 7.0 patches for systems entitled to receive automatic Management Agent updates are not included in this guide.
+
+Otherwise at this time (2017/02) scripts are updated up for versions 7.0 + 6.5 + 6.1
 
 ## Running
 
@@ -35,3 +48,4 @@ Make sure to keep the patch names sequential so they get applied in the right or
 ## Disclaimer
 
 Use at your own risk, make sure to test before rolling out to Production.
+
